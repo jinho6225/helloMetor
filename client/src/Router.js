@@ -1,11 +1,13 @@
 import React from 'react';
 import {HashRouter as Router, Route, Switch} from "react-router-dom";
 import Home from './routes/Home';
-import ContactUs from './routes/ContactUs';
-import Privacy from './routes/Privacy';
-import BarDateDetail from './routes/BarDateDetail';
-import BarDayDetail from './routes/BarDayDetail';
+const ContactUs = React.lazy(() => import('./routes/ContactUs'));
+const Privacy = React.lazy(() => import('./routes/Privacy'));
+const BarDateDetail = React.lazy(() => import('./routes/BarDateDetail'));
+const BarDayDetail = React.lazy(() => import('./routes/BarDayDetail'));
 import Navigation from './components/Navigation';
+// import OtherComponent from './OtherComponent';
+// const OtherComponent = React.lazy(() => import('./OtherComponent'));
 
 
 const AppRouter = () => {
