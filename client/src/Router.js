@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import {HashRouter as Router, Route, Switch} from "react-router-dom";
 import Home from './routes/Home';
-const ContactUs = React.lazy(() => import('./routes/ContactUs'));
-const Privacy = React.lazy(() => import('./routes/Privacy'));
-const BarDateDetail = React.lazy(() => import('./routes/BarDateDetail'));
-const BarDayDetail = React.lazy(() => import('./routes/BarDayDetail'));
+const ContactUs = lazy(() => import('./routes/ContactUs'));
+const Privacy = lazy(() => import('./routes/Privacy'));
+const BarDateDetail = lazy(() => import('./routes/BarDateDetail'));
+const BarDayDetail = lazy(() => import('./routes/BarDayDetail'));
 import Navigation from './components/Navigation';
 // import OtherComponent from './OtherComponent';
 // const OtherComponent = React.lazy(() => import('./OtherComponent'));
+const loading = () => <p>Loading</p>;
 
 
 const AppRouter = () => {
@@ -21,16 +22,24 @@ const AppRouter = () => {
                             <Home />
                         </Route>
                         <Route path='/contactus'>
-                            <ContactUs />
+                            <Suspense fallback={loading()}>
+                                <ContactUs />
+                            </Suspense>
                         </Route>
                         <Route path='/privacy-policy'>
-                            <Privacy />
+                            <Suspense fallback={loading()}>
+                                <Privacy />
+                            </Suspense>
                         </Route>                        
                         <Route path='/bar-date-detail/:id'>
-                            <BarDateDetail />
+                            <Suspense fallback={loading()}>
+                                <BarDateDetail />
+                            </Suspense>
                         </Route>
                         <Route path='/bar-day-detail/:id'>
-                            <BarDayDetail />
+                            <Suspense fallback={loading()}>
+                                <BarDayDetail />
+                            </Suspense>
                         </Route>
                     </>
             </Switch>
