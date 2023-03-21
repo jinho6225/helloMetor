@@ -7,7 +7,7 @@ A full stack Node.js and React.js Data visualization App
 
 ## Live Demo
 
-Try the application live at [https://hellometer.jinho6225.com](https://hellometer.jinho6225.com)
+Try the application live at [https://port-0-hello-meter-p8xrq2mlffai3lm.sel3.cloudtype.app/](https://port-0-hello-meter-p8xrq2mlffai3lm.sel3.cloudtype.app/)
 
 ## Technologies Used
 
